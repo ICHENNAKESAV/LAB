@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Selector</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        .color-option {
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Selector</h1>
+    
+    <form>
+        <label class="color-option">
+            <input type="radio" name="color" value="red"> Red
+        </label>
+        <label class="color-option">
+            <input type="radio" name="color" value="green"> Green
+        </label>
+        <label class="color-option">
+            <input type="radio" name="color" value="blue"> Blue
+        </label>
+    </form>
+    
+    <script>
+        const colorOptions = document.querySelectorAll('input[name="color"]');
+        
+        colorOptions.forEach(option => {
+            option.addEventListener('change', () => {
+                const selectedColor = document.querySelector('input[name="color"]:checked').value;
+                document.body.style.backgroundColor = selectedColor;
+            });
+        });
+    </script>
+</body>
+</html>

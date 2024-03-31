@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Picker Form</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Color Picker Form</h1>
+    <form>
+        <label for="foreground">Foreground Color:</label>
+        <input type="color" id="foreground" name="foreground">
+
+        <label for="background">Background Color:</label>
+        <input type="color" id="background" name="background">
+
+        <button type="button" onclick="applyColors()">Apply Colors</button>
+    </form>
+
+    <script>
+        function applyColors() {
+            var foregroundColor = document.getElementById("foreground").value;
+            var backgroundColor = document.getElementById("background").value;
+
+            document.body.style.color = foregroundColor;
+            document.body.style.backgroundColor = backgroundColor;
+        }
+    </script>
+</body>
+</html>
